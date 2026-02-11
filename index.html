@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resource â Type Selection Specimens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #FAFAF8;
+    --fg: #171717;
+    --muted: #6B6B6B;
+    --border: #E5E5E3;
+    --accent-gold: #E2C46C;
+    --accent-teal: #098B6B;
+    --accent-purple: #9B16C0;
+    --card-bg: #FFFFFF;
+    --section-gap: 80px;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* --- Header --- */
+  .site-header {
+    padding: 40px 48px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .site-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .site-header span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* --- Main --- */
+  main { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+
+  /* --- Pairing Section --- */
+  .pairing {
+    padding: var(--section-gap) 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .pairing:last-child { border-bottom: none; }
+
+  .pairing-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    margin-bottom: 8px;
+  }
+
+  .pairing-names {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin-bottom: 40px;
+    letter-spacing: 0.02em;
+  }
+  .pairing-names strong {
+    color: var(--fg);
+    font-weight: 600;
+  }
+
+  /* --- Specimen Grid --- */
+  .specimen-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .specimen-grid { grid-template-columns: 1fr; }
+    main { padding: 0 24px; }
+    .site-header { padding: 24px; }
+  }
+
+  .specimen-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 36px;
+    transition: box-shadow 0.3s ease;
+  }
+  .specimen-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  .specimen-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* --- Hero Headline Specimen --- */
+  .hero-specimen {
+    grid-column: 1 / -1;
+    background: var(--fg);
+    color: #FAFAF8;
+    border-color: var(--fg);
+    padding: 64px 48px;
+    text-align: center;
+  }
+  .hero-specimen .specimen-label {
+    color: rgba(250,250,248,0.4);
+    border-bottom-color: rgba(250,250,248,0.15);
+  }
+  .hero-headline {
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+  .hero-body {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0.75;
+    font-size: 1.05rem;
+  }
+
+  /* --- Type Scale --- */
+  .type-scale-row {
+    display: flex;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+  }
+  .type-scale-row:last-child { border-bottom: none; }
+
+  .scale-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    width: 60px;
+    flex-shrink: 0;
+  }
+  .scale-size {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    color: var(--muted);
+    width: 50px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .scale-sample {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* --- Weight Specimens --- */
+  .weight-row {
+    display: flex;
+    align-items: baseline;
+    padding: 8px 0;
+    gap: 16px;
+  }
+  .weight-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    width: 80px;
+    flex-shrink: 0;
+  }
+  .weight-sample {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  /* --- Paragraph Specimen --- */
+  .paragraph-specimen {
+    line-height: 1.75;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  /* --- Alphabet --- */
+  .alphabet {
+    font-size: 1.35rem;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+    color: #333;
+    word-break: break-all;
+  }
+
+  /* --- Pairing 1: Playfair + Inter --- */
+  .p1-display { font-family: 'Playfair Display', serif; }
+  .p1-body { font-family: 'Inter', sans-serif; }
+
+  /* --- Pairing 2: Cormorant + Montserrat --- */
+  .p2-display { font-family: 'Cormorant Garamond', serif; }
+  .p2-body { font-family: 'Montserrat', sans-serif; }
+
+  /* --- Pairing 3: DM Serif + DM Sans --- */
+  .p3-display { font-family: 'DM Serif Display', serif; }
+  .p3-body { font-family: 'DM Sans', sans-serif; }
+
+  /* --- Pairing 4: Libre Baskerville + Source Sans 3 --- */
+  .p4-display { font-family: 'Libre Baskerville', serif; }
+  .p4-body { font-family: 'Source Sans 3', sans-serif; }
+
+  /* --- Footer --- */
+  .site-footer {
+    padding: 40px 48px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Resource &mdash; Type Selection</h1>
+  <span>4 Pairings &middot; 2026 Rebrand</span>
+</header>
+
+<main>
+
+  <!-- ========== PAIRING 1 ========== -->
+  <section class="pairing">
+    <div class="pairing-number">Pairing 01</div>
+    <div class="pairing-names"><strong>Playfair Display</strong> &times; <strong>Inter</strong></div>
+
+    <div class="specimen-grid">
+      <!-- Hero -->
+      <div class="specimen-card hero-specimen">
+        <div class="specimen-label">Display + Body in Context</div>
+        <div class="hero-headline p1-display" style="font-size: 3rem; font-weight: 700;">Unlocking Potential<br>Through Partnership</div>
+        <div class="hero-body p1-body" style="font-weight: 400;">A boutique tenant advisory firm combining deep brokerage experience with a consultative, conflict-free approach to commercial real estate.</div>
+      </div>
+
+      <!-- Type Scale: Display -->
+      <div class="specimen-card">
+        <div class="specimen-label">Display Type Scale</div>
+        <div class="type-scale-row">
+          <span class="scale-label">H1</span>
+          <span class="scale-sample p1-display" style="font-size: 2.5rem; font-weight: 700;">Partnership</span>
+          <span class="scale-size">40px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H2</span>
+          <span class="scale-sample p1-display" style="font-size: 2rem; font-weight: 600;">Our Services</span>
+          <span class="scale-size">32px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H3</span>
+          <span class="scale-sample p1-display" style="font-size: 1.5rem; font-weight: 600;">Tenant Advisory</span>
+          <span class="scale-size">24px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H4</span>
+          <span class="scale-sample p1-display" style="font-size: 1.25rem; font-weight: 500;">Brokerage</span>
+          <span class="scale-size">20px</span>
+        </div>
+      </div>
+
+      <!-- Type Scale: Body -->
+      <div class="specimen-card">
+        <div class="specimen-label">Body Type Scale</div>
+        <div class="type-scale-row">
+          <span class="scale-label">Lead</span>
+          <span class="scale-sample p1-body" style="font-size: 1.25rem; font-weight: 400;">We guide every step</span>
+          <span class="scale-size">20px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Body</span>
+          <span class="scale-sample p1-body" style="font-size: 1rem; font-weight: 400;">Resource is a boutique firm</span>
+          <span class="scale-size">16px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Small</span>
+          <span class="scale-sample p1-body" style="font-size: 0.875rem; font-weight: 400;">San Francisco, California</span>
+          <span class="scale-size">14px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Caption</span>
+          <span class="scale-sample p1-body" style="font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Schedule a Consultation</span>
+          <span class="scale-size">12px</span>
+        </div>
+      </div>
+
+      <!-- Alphabet -->
+      <div class="specimen-card">
+        <div class="specimen-label">Playfair Display &mdash; Alphabet</div>
+        <div class="alphabet p1-display">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</div>
+      </div>
+
+      <!-- Paragraph -->
+      <div class="specimen-card">
+        <div class="specimen-label">Inter &mdash; Body Paragraph</div>
+        <div class="paragraph-specimen p1-body">Resource was founded to bridge the gap between in-house operational expertise and market-facing brokerage. We partner with companies from their first office through IPO, providing tenant-only representation that is consultative, conflict-free, and built around long-term relationships.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAIRING 2 ========== -->
+  <section class="pairing">
+    <div class="pairing-number">Pairing 02</div>
+    <div class="pairing-names"><strong>Cormorant Garamond</strong> &times; <strong>Montserrat</strong></div>
+
+    <div class="specimen-grid">
+      <!-- Hero -->
+      <div class="specimen-card hero-specimen">
+        <div class="specimen-label">Display + Body in Context</div>
+        <div class="hero-headline p2-display" style="font-size: 3.25rem; font-weight: 600;">Spaces That Scale<br>With Your Ambition</div>
+        <div class="hero-body p2-body" style="font-weight: 400;">Refined enough for enterprise clients and investor-facing presentations, yet approachable enough for a founder fresh out of a demo day.</div>
+      </div>
+
+      <!-- Type Scale: Display -->
+      <div class="specimen-card">
+        <div class="specimen-label">Display Type Scale</div>
+        <div class="type-scale-row">
+          <span class="scale-label">H1</span>
+          <span class="scale-sample p2-display" style="font-size: 2.75rem; font-weight: 600;">Ambition</span>
+          <span class="scale-size">44px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H2</span>
+          <span class="scale-sample p2-display" style="font-size: 2.1rem; font-weight: 500;">Client Stories</span>
+          <span class="scale-size">34px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H3</span>
+          <span class="scale-sample p2-display" style="font-size: 1.6rem; font-weight: 500;">Consulting</span>
+          <span class="scale-size">26px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H4</span>
+          <span class="scale-sample p2-display" style="font-size: 1.3rem; font-weight: 500;">Portfolio Strategy</span>
+          <span class="scale-size">21px</span>
+        </div>
+      </div>
+
+      <!-- Type Scale: Body -->
+      <div class="specimen-card">
+        <div class="specimen-label">Body Type Scale</div>
+        <div class="type-scale-row">
+          <span class="scale-label">Lead</span>
+          <span class="scale-sample p2-body" style="font-size: 1.25rem; font-weight: 400;">Built for what comes next</span>
+          <span class="scale-size">20px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Body</span>
+          <span class="scale-sample p2-body" style="font-size: 1rem; font-weight: 400;">Premium positioning for growth</span>
+          <span class="scale-size">16px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Small</span>
+          <span class="scale-sample p2-body" style="font-size: 0.875rem; font-weight: 400;">Tenant representation only</span>
+          <span class="scale-size">14px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Caption</span>
+          <span class="scale-sample p2-body" style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">Get Started Today</span>
+          <span class="scale-size">12px</span>
+        </div>
+      </div>
+
+      <!-- Alphabet -->
+      <div class="specimen-card">
+        <div class="specimen-label">Cormorant Garamond &mdash; Alphabet</div>
+        <div class="alphabet p2-display">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</div>
+      </div>
+
+      <!-- Paragraph -->
+      <div class="specimen-card">
+        <div class="specimen-label">Montserrat &mdash; Body Paragraph</div>
+        <div class="paragraph-specimen p2-body">Our Executive in Residence program embeds operators with 15+ years of experience directly into your organization. From location strategy and headcount planning to cost benchmarking and governance process design, we function as your fractional head of real estate.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAIRING 3 ========== -->
+  <section class="pairing">
+    <div class="pairing-number">Pairing 03</div>
+    <div class="pairing-names"><strong>DM Serif Display</strong> &times; <strong>DM Sans</strong></div>
+
+    <div class="specimen-grid">
+      <!-- Hero -->
+      <div class="specimen-card hero-specimen">
+        <div class="specimen-label">Display + Body in Context</div>
+        <div class="hero-headline p3-display" style="font-size: 3rem; font-weight: 400;">Your Partner From<br>First Office to IPO</div>
+        <div class="hero-body p3-body" style="font-weight: 400;">Two typefaces designed together from the ground up. Zero friction, quiet excellence, inherent harmony â the typographic expression of intentional simplicity.</div>
+      </div>
+
+      <!-- Type Scale: Display -->
+      <div class="specimen-card">
+        <div class="specimen-label">Display Type Scale</div>
+        <div class="type-scale-row">
+          <span class="scale-label">H1</span>
+          <span class="scale-sample p3-display" style="font-size: 2.5rem; font-weight: 400;">Excellence</span>
+          <span class="scale-size">40px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H2</span>
+          <span class="scale-sample p3-display" style="font-size: 2rem; font-weight: 400;">Our Company</span>
+          <span class="scale-size">32px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H3</span>
+          <span class="scale-sample p3-display" style="font-size: 1.5rem; font-weight: 400;">The Team</span>
+          <span class="scale-size">24px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H4</span>
+          <span class="scale-sample p3-display" style="font-size: 1.25rem; font-weight: 400;">Community</span>
+          <span class="scale-size">20px</span>
+        </div>
+      </div>
+
+      <!-- Type Scale: Body -->
+      <div class="specimen-card">
+        <div class="specimen-label">Body Type Scale</div>
+        <div class="type-scale-row">
+          <span class="scale-label">Lead</span>
+          <span class="scale-sample p3-body" style="font-size: 1.25rem; font-weight: 400;">Designed for harmony</span>
+          <span class="scale-size">20px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Body</span>
+          <span class="scale-sample p3-body" style="font-size: 1rem; font-weight: 400;">Curated client relationships</span>
+          <span class="scale-size">16px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Small</span>
+          <span class="scale-sample p3-body" style="font-size: 0.875rem; font-weight: 400;">Founded in San Francisco</span>
+          <span class="scale-size">14px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Caption</span>
+          <span class="scale-sample p3-body" style="font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Learn More</span>
+          <span class="scale-size">12px</span>
+        </div>
+      </div>
+
+      <!-- Alphabet -->
+      <div class="specimen-card">
+        <div class="specimen-label">DM Serif Display &mdash; Alphabet</div>
+        <div class="alphabet p3-display">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</div>
+      </div>
+
+      <!-- Paragraph -->
+      <div class="specimen-card">
+        <div class="specimen-label">DM Sans &mdash; Body Paragraph</div>
+        <div class="paragraph-specimen p3-body">We keep a curated group of clients and put everything behind them. Our conflict-free model means we only represent tenants â never landlords. This alignment of interests is the foundation of every partnership we build, from first lease through portfolio-wide strategy.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAIRING 4 ========== -->
+  <section class="pairing">
+    <div class="pairing-number">Pairing 04</div>
+    <div class="pairing-names"><strong>Libre Baskerville</strong> &times; <strong>Source Sans 3</strong></div>
+
+    <div class="specimen-grid">
+      <!-- Hero -->
+      <div class="specimen-card hero-specimen">
+        <div class="specimen-label">Display + Body in Context</div>
+        <div class="hero-headline p4-display" style="font-size: 2.75rem; font-weight: 700;">The Powerhouse<br>Boutique</div>
+        <div class="hero-body p4-body" style="font-weight: 400;">Timeless, unfussy, and unmistakably premium. The typographic equivalent of a bespoke navy suit â institutional credibility meets born-in-the-AI-era clarity.</div>
+      </div>
+
+      <!-- Type Scale: Display -->
+      <div class="specimen-card">
+        <div class="specimen-label">Display Type Scale</div>
+        <div class="type-scale-row">
+          <span class="scale-label">H1</span>
+          <span class="scale-sample p4-display" style="font-size: 2.5rem; font-weight: 700;">Authority</span>
+          <span class="scale-size">40px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H2</span>
+          <span class="scale-sample p4-display" style="font-size: 2rem; font-weight: 700;">Contact Us</span>
+          <span class="scale-size">32px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H3</span>
+          <span class="scale-sample p4-display" style="font-size: 1.5rem; font-weight: 700;">RFP Management</span>
+          <span class="scale-size">24px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">H4</span>
+          <span class="scale-sample p4-display" style="font-size: 1.25rem; font-weight: 400;">AI Upskilling</span>
+          <span class="scale-size">20px</span>
+        </div>
+      </div>
+
+      <!-- Type Scale: Body -->
+      <div class="specimen-card">
+        <div class="specimen-label">Body Type Scale</div>
+        <div class="type-scale-row">
+          <span class="scale-label">Lead</span>
+          <span class="scale-sample p4-body" style="font-size: 1.25rem; font-weight: 400;">Trust built over decades</span>
+          <span class="scale-size">20px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Body</span>
+          <span class="scale-sample p4-body" style="font-size: 1rem; font-weight: 400;">Rock-solid foundation of trust</span>
+          <span class="scale-size">16px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Small</span>
+          <span class="scale-sample p4-body" style="font-size: 0.875rem; font-weight: 400;">Conflict-free representation</span>
+          <span class="scale-size">14px</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="scale-label">Caption</span>
+          <span class="scale-sample p4-body" style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">Free Consultation</span>
+          <span class="scale-size">12px</span>
+        </div>
+      </div>
+
+      <!-- Alphabet -->
+      <div class="specimen-card">
+        <div class="specimen-label">Libre Baskerville &mdash; Alphabet</div>
+        <div class="alphabet p4-display">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</div>
+      </div>
+
+      <!-- Paragraph -->
+      <div class="specimen-card">
+        <div class="specimen-label">Source Sans 3 &mdash; Body Paragraph</div>
+        <div class="paragraph-specimen p4-body">Our hospitality-level service handles everything so you don't have to think about it. From site selection and lease negotiation to build-out coordination and move management, Resource is the single point of contact for your entire commercial real estate lifecycle.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  Resource &middot; Type Selection Specimens &middot; 2026
+</footer>
+
+</body>
+</html>
